@@ -1,0 +1,331 @@
+/* --- Color Palette & Variables --- */
+:root {
+  --bg-sidebar: #f4f5f7;     /* Very soft grey for sidebar */
+  --bg-content: #ffffff;     /* Pure white for reading area */
+  --text-main: #2d3748;      /* Deep charcoal (easier on eyes than black) */
+  --text-muted: #718096;     /* Muted slate for secondary text */
+  --accent-color: #4a5568;   /* Muted steel blue/grey */
+  --accent-light: #e2e8f0;   /* Light grey for borders and hovers */
+  --font-main: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-main);
+  background-color: var(--bg-content);
+  line-height: 1.7;
+  display: flex;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- LEFT SIDEBAR (Fixed) --- */
+.sidebar {
+  width: 300px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--accent-light);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  z-index: 10;
+}
+
+.sidebar-header {
+  margin-bottom: 3rem;
+}
+
+.sidebar-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+}
+
+.sidebar-header .role {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.social-links a {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--text-main);
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  flex-grow: 1; /* Pushes the footer down */
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+  background-color: rgba(0,0,0,0.03);
+}
+
+.nav-link.active {
+  color: var(--text-main);
+  font-weight: 600;
+  border-left: 2px solid var(--accent-color);
+  background-color: rgba(0,0,0,0.03);
+}
+
+/* Sidebar Footer & Button */
+.sidebar-footer {
+  margin-top: auto;
+}
+
+.btn-print {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-print:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* --- RIGHT CONTENT AREA (Scrollable) --- */
+.content-area {
+  margin-left: 300px; /* Offset by sidebar width */
+  padding: 4rem 10%;
+  max-width: 900px;
+  width: 100%;
+}
+
+.page-section {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.page-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--accent-light);
+  padding-bottom: 0.5rem;
+}
+
+/* Typography & Content Formatting */
+.hero-headline {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  max-width: 90%;
+}
+
+.subsection-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1rem;
+  color: var(--text-main);
+}
+
+/* Lists */
+.expertise-list, .info-list, .standard-list {
+  list-style: none;
+}
+
+.expertise-list li, .info-list li, .standard-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-muted);
+}
+
+.expertise-list li::before, .info-list li::before, .standard-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.expertise-list strong, .info-list strong {
+  color: var(--text-main);
+}
+
+/* Resume Block Details */
+.about-block, .resume-block {
+  margin-bottom: 3rem;
+}
+
+.timeline-item, .project-item {
+  margin-bottom: 2rem;
+}
+
+.timeline-item h4, .project-header h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.tech-tags {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.project-item p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* --- RESPONSIVE DESIGN (Mobile/Tablets) --- */
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 2rem;
+    border-right: none;
+    border-bottom: 1px solid var(--accent-light);
+  }
+
+  .sidebar-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-link {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.5rem 0;
+    margin-right: 1rem;
+  }
+
+  .nav-link.active {
+    border-left: none;
+    border-bottom: 2px solid var(--accent-color);
+  }
+
+  .content-area {
+    margin-left: 0;
+    padding: 2rem;
+  }
+}
+
+/* --- PRINT LAYOUT (For saving as PDF) --- */
+@media print {
+  body {
+    background-color: #fff;
+    color: #000;
+    display: block;
+  }
+
+  /* Hide the sidebar when printing */
+  .sidebar {
+    display: none !important;
+  }
+
+  /* Expand content area to full width and remove scroll padding */
+  .content-area {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100%;
+  }
+
+  /* Force all pages to display on the printed document */
+  .page-section {
+    display: block !important;
+    opacity: 1 !important;
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+
+  /* Hide "Home" heading in print to save space */
+  #home .section-title {
+    display: none;
+  }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinod M. | Data Science & ML Portfolio</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- LEFT SIDEBAR: Fixed to the screen -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1>Vinod M.</h1>
+      <p class="role">Data Science & ML Fresher</p>
+      
+      <div class="social-links">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-page="about">About & Education</a></li>
+        <li><a href="#resume" class="nav-link" data-page="resume">Technical Resume</a></li>
+      </ul>
+    </nav>
+
+    <!-- Footer Action -->
+    <div class="sidebar-footer">
+      <button id="print-btn" class="btn-print">
+        <i class="fas fa-file-pdf"></i> Print / Download
+      </button>
+    </div>
+  </aside>
+
+  <!-- RIGHT CONTENT AREA: Scrollable -->
+  <main class="content-area">
+    
+    <!-- PAGE 1: HOME -->
+    <section id="home" class="page-section active">
+      <div class="section-title">Home</div>
+      <h2 class="hero-headline">Building intelligent systems and seamless backends.</h2>
+      <p class="hero-text">
+        I am a B.Tech Computer Science Engineering student at RVITM focusing on transforming raw data into actionable insights and deploying machine learning models into practical software applications.
+      </p>
+
+      <h3 class="subsection-heading">Core Expertise</h3>
+      <ul class="expertise-list">
+        <li><strong>Machine Learning:</strong> XGBoost, Scikit-learn, Feature Engineering, EDA</li>
+        <li><strong>Backend Integration:</strong> FastAPI, REST API Development</li>
+        <li><strong>Core Engineering:</strong> Python, C/C++, Data Structures, Linux/Ubuntu</li>
+      </ul>
+    </section>
+
+    <!-- PAGE 2: ABOUT -->
+    <section id="about" class="page-section">
+      <div class="section-title">About & Education</div>
+      
+      <div class="about-block">
+        <h3 class="subsection-heading">Education</h3>
+        <div class="timeline-item">
+          <h4>Bachelor of Technology in Computer Science & Engineering</h4>
+          <p class="timeline-meta">RV Institute of Technology and Management (RVITM), Bengaluru</p>
+          <p class="timeline-desc">Relevant Coursework: Data Structures, Design and Analysis of Algorithms, DBMS, Operating Systems, Data Visualization.</p>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h3 class="subsection-heading">Personal Details</h3>
+        <ul class="info-list">
+          <li><strong>Location:</strong> Bengaluru, Karnataka, India</li>
+          <li><strong>Profile:</strong> Tech enthusiast, active gym-goer, and motorcycle rider (Honda CB350).</li>
+          <li><strong>Languages:</strong> English</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PAGE 3: RESUME -->
+    <section id="resume" class="page-section">
+      <div class="section-title">Technical Resume</div>
+      
+      <!-- Projects -->
+      <div class="resume-block">
+        <h3 class="subsection-heading">Selected Projects</h3>
+        
+        <div class="project-item">
+          <div class="project-header">
+            <h4>01 / AI-Based Dyslexia Detection System</h4>
+            <span class="tech-tags">Python, XGBoost, FastAPI</span>
+          </div>
+          <p>Engineered a preprocessing pipeline for the ETDD70 eye-tracking dataset. Extracted behavioral features and trained an XGBoost classification model to identify reading patterns. Designed a FastAPI backend architecture for model prediction serving.</p>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <h4>02 / SkyGuard — Weather Anomaly Detection</h4>
+            <span class="tech-tags">Python, FastAPI, Scikit-learn, Docker</span>
+          </div>
+          <p>Developed for the Smart India Hackathon. Architected a hybrid quality-control system for Automatic Weather Station data, combining rule-based validation with machine learning anomaly detection and result fusion.</p>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <h4>03 / Spotify Clone</h4>
+            <span class="tech-tags">HTML, CSS, JavaScript</span>
+          </div>
+          <p>Created a responsive web interface replicating core media player functionalities, focusing on interactive UI/UX components using vanilla web technologies.</p>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="resume-block">
+        <h3 class="subsection-heading">Achievements</h3>
+        <ul class="standard-list">
+          <li>Co-authored and submitted a research paper on automated plant leaf disease detection to ICACECS.</li>
+          <li>Competed in the FantomCode 24-hour national hackathon at RVITM.</li>
+          <li>Participated in Robofiesta 2k25 technical competitions (Bug Squash, Capture the Flag).</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
